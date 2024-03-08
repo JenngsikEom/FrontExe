@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +16,20 @@
   ***
    *
 */
-        const num = Number(prompt('숫자를 입력하세요', 0));
-
-        for(let i=1;i<=num;i++) {		
-			for(let j=0;j<i;j++)
-				document.write('*');
-                document.write('<br>');
-			}
+        let num = prompt('숫자입력', 0);
+        for (let i = 0; i < num; i++) {
+            for (let j = 0; j < num - i - 1; j++) {
+                document.write("&nbsp;");
+            }
+            for (let k = 0; k < 2 * i + 1; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
     </script>
 </head>
+
 <body>
 </body>
+
 </html>
