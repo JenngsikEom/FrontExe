@@ -2,7 +2,9 @@
 물고기를 상자에 띄우고
 물고기를 5초안에 최대한 클릭할 것
 클릭한 횟수가 상자위에 출력될 것
-5초가 지나면 더 이상 클릭횟수 증가하지 않음. 
+5초가 지나면 더 이상 클릭횟수 증가하지 않음.
+
+몰고기는 0.2초마다 위치를 옮겨다닐 것
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +32,16 @@
             let isPlaying = true;
             let $score = document.querySelector('#score');
             let $fish = document.querySelector('#fish');
+            const luckVal = parseInt(Math.random());
+            const step_val = 50;
+            let max_x = 430;
+            let max_y = 50;
+            let step = step_val;
+
+            timerID = setInterval(() =>{
+                let x = $fish.getBoundingClientRect().left + step + luckVal;
+                let y = $fish.getBoundingClientRect().top + step + luckVal;
+            })
 
             $fish.addEventListener('click', () => {
                 if(isPlaying){
